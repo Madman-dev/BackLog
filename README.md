@@ -1,3 +1,3 @@
 # TIL
 
-- 230711_Difference Between Instance and Object
+추후 일괄적으로 업데이트 예정
