@@ -28,3 +28,7 @@ let myHome = House(rooms: 3, windows: 3, hasKitchen: true, hasDoor: true)
 원문에서 확인한 내용은, <br/>
 objects are result of instantiating a class. Instantiation is the process of taking the blueprint and defining each attribute<br/>and behavior so that the resultant object actually represents a real life object. 라고 설명을 한다.<br/><br/>
 결국, 클래스를 통해 초기화한 / 생성한 것을 객체(object)라고 하며, 방과 창문은 몇 개인지, 문과 부엌은 있는지 등을 확인해서 메모리에 올리는 실체화 과정을 거친다는 점이 있겠다. <br/>
+
+#### 참고
+- https://www.differencebetween.com/difference-between-object-and-vs-instance/
+- https://www.codementor.io/@stevedonovan/class-vs-object-vs-instance-14i2s2lu6r
