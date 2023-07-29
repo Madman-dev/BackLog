@@ -11,14 +11,14 @@
 - 단순히 공식문서 및 자료들의 설명을 따라 쓰지 않고 나만의 언어로 설명할 수 있도록 지속적으로 수정 및 업데이트
 
 <br/><br/>
-<details open>
+<details closed>
 <summary>🍏 Swift 언어 로드맵 (Swift programming roadmap)</summary>
 <br>
 
   ![Swift_programming_roadmap_v0 9-3](https://github.com/Madman-dev/TIL/assets/119504454/ed24cd85-6f8d-46ea-803a-ab2db00fa1d2)
 </details>
 
-<details open>
+<details closed>
 <summary>🍎 iOS 개발자 로드맵 (iOS developer roadmap)</summary>
 <br>
 
