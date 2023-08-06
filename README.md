@@ -67,3 +67,4 @@
 # iOS 🍎
 - [Framework와 Library 차이점](https://github.com/Madman-dev/TIL/blob/main/iOS/Framework와%20Library의%20차이점.md)
 - [Margin과 Padding 차이점](https://github.com/Madman-dev/TIL/blob/main/Swift/Difference%20between%20Padding%20and%20Margin.md)
+- [What is reuse Identifier](https://velog.io/@jacks222/reuse-Identifier는-무엇일까)
