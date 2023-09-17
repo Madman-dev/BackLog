@@ -83,6 +83,7 @@ class AnchorViewController: UIViewController {
         return view
     }
     
-    
+    deinit {
+        print("AnchorViewController이 화면에서 내려졌습니다.")
+    }
 }
-

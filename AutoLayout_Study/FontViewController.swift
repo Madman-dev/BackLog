@@ -38,4 +38,7 @@ class FontViewController: UIViewController {
         return label
     }
     
+    deinit {
+        print("FontViewController이 화면에서 내려졌습니다.")
+    }
 }
