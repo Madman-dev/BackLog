@@ -17,6 +17,7 @@
 		BD1316662AB58D6400078AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1316642AB58D6400078AA1 /* LaunchScreen.storyboard */; };
 		BD13166E2AB593E600078AA1 /* FontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13166D2AB593E600078AA1 /* FontView.swift */; };
 		BD1316702AB596D200078AA1 /* LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13166F2AB596D200078AA1 /* LayoutGuide.swift */; };
+		BD6736CE2AB832D500770A34 /* ContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736CD2AB832D500770A34 /* ContentSize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		BD1316672AB58D6400078AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD13166D2AB593E600078AA1 /* FontView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontView.swift; sourceTree = "<group>"; };
 		BD13166F2AB596D200078AA1 /* LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuide.swift; sourceTree = "<group>"; };
+		BD6736CD2AB832D500770A34 /* ContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSize.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				BD13166F2AB596D200078AA1 /* LayoutGuide.swift */,
 				BD0BD0BF2AB73A4000D06584 /* SpacerView.swift */,
 				BD0BD0C12AB7CC2E00D06584 /* ReadableContent.swift */,
+				BD6736CD2AB832D500770A34 /* ContentSize.swift */,
 				BD13165F2AB58D6300078AA1 /* Main.storyboard */,
 				BD1316622AB58D6400078AA1 /* Assets.xcassets */,
 				BD1316642AB58D6400078AA1 /* LaunchScreen.storyboard */,
@@ -152,6 +155,7 @@
 			files = (
 				BD13165E2AB58D6300078AA1 /* AnchorView.swift in Sources */,
 				BD13166E2AB593E600078AA1 /* FontView.swift in Sources */,
+				BD6736CE2AB832D500770A34 /* ContentSize.swift in Sources */,
 				BD0BD0C02AB73A4000D06584 /* SpacerView.swift in Sources */,
 				BD13165A2AB58D6300078AA1 /* AppDelegate.swift in Sources */,
 				BD13165C2AB58D6300078AA1 /* SceneDelegate.swift in Sources */,
