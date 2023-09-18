@@ -1,5 +1,5 @@
 //
-//  FontViewController.swift
+//  FontView.swift
 //  AutoLayout_Study
 //
 //  Created by Jack Lee on 2023/09/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FontViewController: UIViewController {
+class FontView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

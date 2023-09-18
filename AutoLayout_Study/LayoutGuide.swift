@@ -1,5 +1,5 @@
 //
-//  LayoutGuideViewController.swift
+//  LayoutGuide.swift
 //  AutoLayout_Study
 //
 //  Created by Jack Lee on 2023/09/16.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LayoutGuideViewController: UIViewController {
+class LayoutGuide: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

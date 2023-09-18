@@ -1,5 +1,5 @@
 //
-//  spacerViewController.swift
+//  SpacerView.swift
 //  AutoLayout_Study
 //
 //  Created by Jack Lee on 2023/09/17.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SpacerViewController: UIViewController {
+class SpacerView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +57,10 @@ class SpacerViewController: UIViewController {
         
         leadingGuide.widthAnchor.constraint(equalTo: middleGuide.widthAnchor).isActive = true
         leadingGuide.widthAnchor.constraint(equalTo: trailingGuide.widthAnchor).isActive = true
+        
+        /// 오토레이아웃을 사용할 때 ambiguous하면 안된다. 지금도 UILayoutGuide의 넓이만 정했을 뿐 별도의 높이가 지정되지 않아 애매한 상황이다.
+        /// 에러가 발생하거나 의도하던대로 화면이 안 그려질 수 있는데, 그걸 방지하고자 width, height를 모두 제공하는게 가장 바람직하다.
+        
         
         leadingGuide.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         middleGuide.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
