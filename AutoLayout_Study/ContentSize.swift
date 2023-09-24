@@ -35,7 +35,6 @@ class contentSize: UIViewController {
         label.text = text
         label.font = UIFont.systemFont(ofSize: 32)
         label.backgroundColor = .yellow
-        
         return label
     }
     
