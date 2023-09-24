@@ -7,10 +7,11 @@
 
 import UIKit
 
-class contentSize: UIViewController {
+class ContentSize: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setup()
     }
     
@@ -21,7 +22,7 @@ class contentSize: UIViewController {
         label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8).isActive = true
         label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8).isActive = true
         
-        /// 직접 값을 제공할 수 있음
+        /// 직접 값을 제공할 수 있음 > Label의 크기가 알아서 바뀐다. > Intrinsic ContentSize 변경
 //        label.heightAnchor.constraint(equalToConstant: 100).isActive = true
 //        label.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
@@ -30,7 +31,7 @@ class contentSize: UIViewController {
     }
     
     func makeLabel(withText text: String) -> UILabel {
-        let label = UILabel()
+        let label = BigLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.font = UIFont.systemFont(ofSize: 32)

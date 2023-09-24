@@ -19,7 +19,7 @@
 		BD1316702AB596D200078AA1 /* LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD13166F2AB596D200078AA1 /* LayoutGuide.swift */; };
 		BD6736CE2AB832D500770A34 /* ContentSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736CD2AB832D500770A34 /* ContentSize.swift */; };
 		BD6736D02AB8350F00770A34 /* Hugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736CF2AB8350F00770A34 /* Hugging.swift */; };
-		BD6736D22AB85D0000770A34 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736D12AB85D0000770A34 /* Image.swift */; };
+		BD6736D22AB85D0000770A34 /* ImageCHCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736D12AB85D0000770A34 /* ImageCHCR.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		BD13166F2AB596D200078AA1 /* LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutGuide.swift; sourceTree = "<group>"; };
 		BD6736CD2AB832D500770A34 /* ContentSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSize.swift; sourceTree = "<group>"; };
 		BD6736CF2AB8350F00770A34 /* Hugging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hugging.swift; sourceTree = "<group>"; };
-		BD6736D12AB85D0000770A34 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		BD6736D12AB85D0000770A34 /* ImageCHCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCHCR.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +79,7 @@
 				BD0BD0C12AB7CC2E00D06584 /* ReadableContent.swift */,
 				BD6736CD2AB832D500770A34 /* ContentSize.swift */,
 				BD6736CF2AB8350F00770A34 /* Hugging.swift */,
-				BD6736D12AB85D0000770A34 /* Image.swift */,
+				BD6736D12AB85D0000770A34 /* ImageCHCR.swift */,
 				BD13165F2AB58D6300078AA1 /* Main.storyboard */,
 				BD1316622AB58D6400078AA1 /* Assets.xcassets */,
 				BD1316642AB58D6400078AA1 /* LaunchScreen.storyboard */,
@@ -168,7 +168,7 @@
 				BD0BD0C22AB7CC2E00D06584 /* ReadableContent.swift in Sources */,
 				BD6736D02AB8350F00770A34 /* Hugging.swift in Sources */,
 				BD1316702AB596D200078AA1 /* LayoutGuide.swift in Sources */,
-				BD6736D22AB85D0000770A34 /* Image.swift in Sources */,
+				BD6736D22AB85D0000770A34 /* ImageCHCR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

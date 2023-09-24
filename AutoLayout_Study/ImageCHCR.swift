@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Image: UIViewController {
+class ImageCHCR: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
