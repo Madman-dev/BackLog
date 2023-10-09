@@ -12,7 +12,7 @@ Swift에서 정수를 다양한 형식으로 제공하는데, 8, 16, 32 그리�
 사용하는 기기, 플랫폼에 따라 자동적으로 타입을 따라간다고 한다.<br/>
 따라서, Swift 문법을 사용하며, Xcode에서 특정 범위를 지정하지 않을 것이라면 Int를 활용하면 의도하고자 하는 대부분의 값은 담을 수 있다. <br/><br/>
 
-### 자주 사용하는 표현 (개인적 생각)
+### in-depth
 1. **random(in:)**<br/>
 해당 표현으로 랜덤으로 값을 추출할 수 있다.<br/>
 특정 범위를 지정하여 값을 뽑아내고 싶다면 유용하게 사용 가능해보인다.
@@ -22,3 +22,15 @@ Swift에서 정수를 다양한 형식으로 제공하는데, 8, 16, 32 그리�
     print(myPick)
     // prints random number from 1 ~ 100
     ```
+
+2. **Integers have operators**<br/>
+subtraction에서부터 multiplication까지 다양한 범위의 데이터 operator가 존재
+작동하는 원리를 읽어보면 operator 우측에 있는 값을 활용하여 결과값(representation of the value)을 bit width로 계산한 뒤,<br/>
+왼쪽에 위치한 변수, 데이터에 보관을 한다고 한다.
+
+```swift
+static func &>>= (inout Int, Int)
+```
+
+#### 참고
+- https://developer.apple.com/documentation/swift/int
