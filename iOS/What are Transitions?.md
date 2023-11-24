@@ -15,7 +15,9 @@ RootViewController를 지정하게 되면 해당 화면 위로 다음 화면들�
 Navigation Controller에 존재하는 navigation Controller object은 정렬된 배열 (orderd Array)형식으로 하위 viewController들을 관리한다.
 
 해당 navigation Controller에서는 특정 행동 시 (버튼 탭 등), 새로운 viewController가 이전 viewController 위로 쌓일 수 있도록 만들게 되는 것이다.
-이 행위를 Push 와 Pop이라 부르는데, push는 새로운 viewController이 stack에 쌓아 올려질 때를 의미하며 이때 화면 전환은 오른쪽에서 왼쪽으로 새 화면이 쌓아 올려진다. Pop는 viewController가 화면에서 내려지고 아래에 존재하는 viewController로 돌아가는 형태를 의미하는데, 이때 화면은 오른쪽으로 밀려나가면서 화면 전환이 마무리 된다.
+이 행위를 Push 와 Pop이라 부르는데, push는 새로운 viewController이 stack에 쌓아 올려질 때를 의미하며 이때 화면 전환은 오른쪽에서 왼쪽으로 새 화면이 쌓아 올려진다.
+Pop는 viewController가 화면에서 내려지고 아래에 존재하는 viewController로 돌아가는 형태를 의미하는데, 이때 화면은 오른쪽으로 밀려나가면서 화면 전환이 마무리 된다.
+*이해해야 되는 점은 이전 화면 자체에 올려지는 것이 아니라 한번은 실행된 (instantiated) 화면을 보관하고 있는 navigation Stack에 올려지는 것이다*
 
 * 최초 설정한 rootViewController은 navigation controller stack에서 사라지지 않기 때문에 push / pop이 불가능하다.
 더불어 navigation Controller을 사용하면 앞서 설명한대로 viewController들이 쌓아 올려지는데, hierarchy를 보게되면 겹겹이 쌓인 viewController를 볼 수 있다.
@@ -64,6 +66,15 @@ class ViewController: UIViewController {
 segue가 가지고 있는 idetifier를 확인하고 일치할 경우 viewController에 있는 데이터 중 bmiColor, bmiAdvice, bmi 데이터를 secondVC로 넘길 것을 약속한다.
 이후 shouldPerform을 통해 다시 한번 조건을 확인하고 특정 UIComponent에 연결된 segue가 실행되면서 데이터를 넘기고 화면 전환이 이뤄질 것이다.
 
+### 3. present
+Present는 앞서 push/pop 그리고 perform Segue를 하는 방식과는 달리 코드로 특정 viewController를 등장시킬 때 사용이 된다.
+몇가지 특징이 있는데, Present는 modal presentation 형식이기에 화면이 전체를 채우지 않는다.
+*단, modalPresentationStyle을 바꾸면 full Screen이 가능해진다.
+
+이유는 말그대로 modally viewController이 등장하기 때문인데, 존재하는 viewController *위에* 등장하는 점이 특징이다.
+present로 새 화면을 띄우게 될 경우, 아래에서 위로만 화면 전환이 이루어지는데, navigationController / stack 위에 해당 화면이 쌓이도록 하는 방식이 아니다.
+**그렇기에 navigationBar이 존재하지 않는다!**
+
 
 ### 참고
 - https://developer.apple.com/documentation/uikit/uinavigationcontroller
@@ -71,3 +82,4 @@ segue가 가지고 있는 idetifier를 확인하고 일치할 경우 viewControl
 - https://developer.apple.com/documentation/uikit/uistoryboardsegue
 - https://developer.apple.com/documentation/uikit/uiviewcontroller/1621490-prepare
 - https://stackoverflow.com/questions/31877312/difference-between-perform-segue-with-identifier-and-prepare-for-segue
+- https://developer.apple.com/documentation/uikit/uiviewcontroller/1621380-present
