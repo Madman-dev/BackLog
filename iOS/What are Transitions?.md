@@ -83,3 +83,4 @@ present로 새 화면을 띄우게 될 경우, 아래에서 위로만 화면 전
 - https://developer.apple.com/documentation/uikit/uiviewcontroller/1621490-prepare
 - https://stackoverflow.com/questions/31877312/difference-between-perform-segue-with-identifier-and-prepare-for-segue
 - https://developer.apple.com/documentation/uikit/uiviewcontroller/1621380-present
+- https://github.com/russell-archer/ModalStylesDemo
