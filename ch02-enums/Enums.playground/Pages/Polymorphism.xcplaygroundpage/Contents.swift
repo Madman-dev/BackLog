@@ -4,7 +4,7 @@ import Foundation
 
 let arr: [Any] = [Date(), "Why was six afraid of seven?", "Because...", 789]
 
-for element: Any in arr {
+for element in arr {
     // element is "Any" type
     switch element {
     case let stringValue as String: "received a string: \(stringValue)"

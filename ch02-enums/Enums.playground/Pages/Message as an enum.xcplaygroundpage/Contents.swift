@@ -46,12 +46,22 @@ if case let Message.text(_, contents: contents, _) = textMessage {
     print("Received: \(contents)") // 안녕?
 }
 
+if case let Message.balloon(_, date: date) = joinMessage {
+    print("이렇게 해서도 나오나요? \(date)")
+}
+
 
 // MARK: -  Questions
 /*
  1. How are the messages able to iterate between the texts from different messages?
  2. From my understanding, Enums value over Structs as they allow developers to create instances and objects without the need to FILL in every detail. + Developer won't have hard time understanding the instance types. ++ can find error messages during compile time. >> what else am I missing?
  3. How are enums an "or"? >> although vague, I did understand how structs enable the instance to be "either" an instance of A or B - as they contain multiple data within the instance, the developer can't be sure which type it would be instantiated into during RUNTIME.
+ 
+ 
+ // MARK: -  Understanding
+ - using an enum would fit best when there is a type of category I could find or use.
+ for instance, when checking if the message has been read? or sent? -> these are a specific condition of a message that categorizes the object.
+ + when I need to have a function embeded within the model. 
  */
 //: [Table of contents](Table%20of%20contents) - [Previous page](@previous) - [Next page](@next)
 
