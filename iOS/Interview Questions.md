@@ -61,7 +61,7 @@ TabBarController는 navigationController와 달리 하단에 배치된 일종의
 생성된 화면들은 메모리 상에서 deinit되지 않는다.  
 Segue는 스토리보드에서 화면1에서 다음 화면으로 전환된다는 일종의 flow/journey를 보여줄 수 있도록 돕는데, 전환을 담당한다기 보다 이어주는 역할을 한다.
 present는 특정 viewController을 push, pop 처럼 화면 전체가 이동되는 모습이 아닌, 화면의 약 7~80%만 띄울 수 있는, modal 형태로 화면 전환이 이루어지는데,
-중요한 viewController 또는 정보가 아닌 경우 (광고 등), 사용자들이 쉽게 화면에서 내릴 수 있도록 활용하는 화면 전환 방식이다. 
+중요한 viewController 또는 정보가 아닌 경우 (광고 등), 사용자들이 쉽게 화면에서 내릴 수 있도록 활용하는 화면 전환 방식이다.
 
 5. 프로퍼티 옵저버(Property Observer)에 대해서 설명해주세요. (didSet, willSet)
 6. bound와 frame의 차이에 대해서 설명해주세요.
