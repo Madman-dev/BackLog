@@ -110,4 +110,32 @@ case .chest(let chest):
 
 // ⭐️ enum을 사용했을 때의 또 다른 장점은 새로운 타입을 추가할 경우, 별도로 고칠 필요가 없다는 점. 해당 Enum에 새로 추가된 타입을 더하게 되면 덧붙여지게 된다. - 예시 chest
 
+//MARK: - Choosing to use Enum or Struct
+/*
+ - 데이터가 변하지 않을 것이라는 확신 + 프로퍼티가 대량으로 공유가 되는 상황이라면 subClassing이 오히려 좋은 선택일 수 있다.
+ - 하지만 subClassing은 좀 더 rigid hierarchy를 구성하게 만든다고 한다.
+ - 더불어 class를 무조건 사용하게 된다.
+ 
+ - 비슷한 타입이 의도했던 방향과 다르게 구성된다면 enum과 구조체를 활용하는 방향이 더 좋을 수도 있다.
+ - encompassed Enum은 class를 꼭 사용하지 않아도 되기에...
+ 
+ 
+ 하지만 또 다르게 보면 enum은 제한적인 부분도 많다.
+ case를 모두 다뤄야 한다는 점에서 귀찮은 부분일수도 있다. (type safe)
+ + 책에 의하면 enum을 활용할 경우 서드 파티 라이브러리에서 enum의 모델을 변경할 권한이 없어진다고 한다.
+ Locking Down a model to fixed number of cases >> at the time of writing, enums can' extend with new cases.
+ */
+
+
+//MARK: - Exercise
+
+/*
+ name two benefits of using subclassing instead of enums with associated types.
+ 1. although rigid, subclassing allows third party libraries to gain access to the model of the application.
+ 2. subClassing allows various structures to become a part of the class. This enable easier access to data as structures configure data during run time.
+ 
+ name two benefits of using enums with associated types instead of subclassing?
+ 1. Enums allow developers to check on their code more with ease as they enable errors to be displayed during compile time
+ 2. Enums have easier means to add new Types of Data.
+ */
 //: [Table of contents](Table%20of%20contents) - [Previous page](@previous) - [Next page](@next)
