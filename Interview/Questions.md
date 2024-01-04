@@ -1,7 +1,7 @@
 ## 기술 면접 질문 정리
 #### 🚨상시 정리 중🚨
 
-###1. 구조체(Struct)에 대해서 설명해주세요. 어떤 경우 사용하나요?
+### 1. 구조체(Struct)에 대해서 설명해주세요. 어떤 경우 사용하나요?
 
 (답변)
 
@@ -48,6 +48,79 @@
 (답변)
 
 (Personal Thought)
+
+[자세한 내용은 [추가 참고](https://developer.apple.com/documentation/uikit/app_and_environment/responding_to_the_launch_of_your_app)]
+
+**어플 상태**
+들어가기 앞서 앱에서는 생명주기를 알려주는 상태(state)라는 것이 존재한다.
+아래와 같이 5가지 상태로 구분된다.
+
+1. Not Running: 어플이 눌리지 않은 상황으로 어떠한 event를 받거나 notification이 실행되지 않는다
+2. Active: 어플이 실행되는 과정으로 event를 받아드릴 수 있는 상황이다.
+3. Inactive: 어플이 실행되고 있는 상황이지만 event를 받아드릴 수 없는 상황이다.
+아주 잠깐 실행되는 단계로 이해되는데, 예를 들어 어플을 하고 있는 도중 전화가 오는 상황이다.
+지금 실행 중인 어플의 event input가 잠시 중단되고 사용자 집중은 전화로 넘어간다.
+Having the user NOT ACTIVELY engaging with our app = Inactive State
+4. Background: 어플이 배경에서 열심히 돌아가고 있는 상황이다.
+어플이 종료된 상황이 아닌, 현재 화면에서는 보이지 않지만 코드를 실행하고 있거나 역할을 수행 중인 상황를 Background라 칭한다.
+Q. 스포티파이 노래를 틀어놓고 다른 어플을 실행하는 과정도 Background라 볼 수 있나?
+5. Suspended: 어플이 background 상태에 들어갔지만 코드를 실행하지 않는 단계이다.
+해당 상황에 들어간 어플은 메모리에 존재하고는 있지만 **멈춘 단계**이며 곧 종료될 예정이거나 not running 단계로 들어갈 예정이다.
+
+위 상태들이 생명 주기를 이해하는데 큰 도움이 된다!
+
+**iOS12 이전**
+어플에 전반적인 행동을 관리하는 메서드들이 모여 있는 프로토콜 UIApplicationDelegate를 채택한 appDelegate파일에서 앱의 생명주기가 처리된다.
+iOS 12까지는 어플의 생명주기 더불어 모든 화면(window)의 생명주기 또한 appDelegate에서 처리가 되었다.
+*iOS13부터 multi-window 개념이 도입되면서 appDelegate 하나만으로는 비효율적이라 생각했는지, sceneDelegate와 역할을 분담하기 시작했다.*
+
+scene을 지원하지 않은 어플 - 모든 생명 주기 관리가 UIApplicationDelegate를 통해 진행되었다고 한다.
+이로 인해 어플 상태 전환이 어플의 전반적인 UI에서 영향이 있었다고...
+
+**iOS12 이전 어플 생명 주기** 🚀 나름의 정답?
+앱 생명 주기를 관리 및 처리하는 방법과 흐름은 아래와 같다.
+1. application(didFinishLaunchingWithOptions): 어플이 실행되며 화면이 출력되기까지 필요한 모든 세팅을 하는 단계
+2. applicationDidBecomeActive: 어플이 실행된 단계
+3. ApplicationWillResignActive: 실행 이후 다른 행동(홈 화면으로 이동)에서 발생하는 어플 상태 변화 - 어플이 inactive 상태로 전환
+4. ApplicationDidEnterBackground: 어플이 background 상태로 전환 알림
+5. ApplicationWillEnterForeground: 어플이 다시 호출되며 active 전 단계인 inactive 단계로 전환됨
+6. ApplicationdidBecomeActive: 어플이 inactive에서 active 상태로 전환됨
+7. ApplicationWillTerminate: 어플이 종료되기 전, not running 상태를 들어가기 직전 호출 (예기치 못한 상황에서는 호출되지 않는다고 한다.)
+
+
+**iOS 13 이후 어플 생명 주기**
+scene별로 고유한 생명주기가 주어졌다! 즉, 어플 뿐만이 아니라 화면 자체가 또 다른 객체로 인식이 된다는 점으로 이해된다.
+이로 인해 하나의 scene은 foreground, 또 다른 scene은 background에 있을 수 있다는 점이다!
+
+1. application(didFinishLaunchingWithOptions): 어플이 실행되며 화면이 출력되기까지 필요한 모든 세팅을 하는 단계
+2. application(configurationForConnecting): 새로운 scene 탄생 - scene delegation 객체를 지정하는 단계
+2.1. Scene(willConnectTo): scene이 연결될 것임을 안내
+3. SceneDidBecomeActive: 어플이 Inactive에서 Active로 상태 전환
+4. SceneWillRegsignActive: 실행 이후 다른 행동(홈 화면으로 이동)에서 발생하는 어플 상태 변화 - 어플이 inactive로 상태 전환
+5. SceneDidEnterBackground: 어플이 background 상태로 전환
+6. SceneWillenterForeground: 어플이 Background에서 Inactive 상태로 전환
+7. SceneDidBecomeActive: 어플이 inactive에서 Active로 상태 전환
+8. sceneDidDisconnected: 연결된 scene 해제를 요청하는 단계
+8.1 Application(didDiscardSceneSession): 한개 이상의 scene을 종료시켰을 때 호출 (multitasking window - app switcher)
+9. ApplicationWillTerminate: 어플이 종료되기 전, not running 상태를 들어가기 직전 호출 (예기치 못한 상황에서는 호출되지 않는다고 한다.)
+
+[참고 링크](https://velog.io/@ahneve/iOSSwift-%EC%95%B1%EC%9D%98-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-Apps-life-cycle)
+
+
+**그렇다면 appDelegate는 정확하게 어떤 역할을 가지고 있을까?**
+어플 생명주기를 담당하는 객체인만큼,
+1. 어플의 중앙 데이터 구조를 생성
+2. 어플의 Scene들을 설정(생성)
+3. 어플 외부에서 발생하는 알림 (notification)에 반응 (eg. 낮은 메모리 안내, 다운로드 완료 알림 등)
+4. 어플 자체를 가리키는 이벤트에 대응 (???)
+5. 어플 실행 시점에 필수 / 필요 서비스 등록 (apple push notification service)
+
+한마디로 어플의 생성 자체는 AppDelegate가 관리를 하며 Event는 각 Scene별로 발생하기에 SceneDelegate가 담당한다는 점.
+
+**그렇다면 sceneDelegate는?**
+SceneDelegate는 UIWindowSceneDelegate 프로토콜을 채택한 하나의 객체로 UserInterface lifeCycle을 관리한다.
+이를 통해 하나의 어플에서 multi-scene을 만드는게 가능해졌다고~
+
 
 ### 4. 뷰 컨트롤러 사이를 전환하는 방법에 대해서 설명해주세요.
 
