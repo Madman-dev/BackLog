@@ -103,6 +103,20 @@ func makeSpotifyButton(withText title: String) -> UIButton {
     return button
 }
 
+func makeStackView(withOrientation axis: NSLayoutConstraint.Axis) -> UIStackView {
+    let stack = UIStackView()
+    stack.axis = axis
+    return stack
+}
+
+func makeLable(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
+    let label = UILabel()
+    label.text = text
+    label.font = UIFont.systemFont(ofSize: size)
+    label.backgroundColor = color
+    return label
+}
+
 extension UIColor {
     static let spotifyGreen = UIColor(red: 28/255, green: 184/255, blue: 89/255, alpha: 1)
 }
