@@ -22,9 +22,8 @@ class CHCRFill: UIViewController {
         stack.addArrangedSubview(makeLable(withText: "Big", size: 128, color: .yellow))
         stack.addArrangedSubview(makeLable(withText: "Mid", size: 64, color: .blue))
         stack.addArrangedSubview(makeLable(withText: "Sml", size: 32, color: .red))
-        
-        view.addSubview(stack)
-        
+
+        view.addSubview(stack)        
         stack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         stack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }

@@ -106,12 +106,15 @@ func makeSpotifyButton(withText title: String) -> UIButton {
 func makeStackView(withOrientation axis: NSLayoutConstraint.Axis) -> UIStackView {
     let stack = UIStackView()
     stack.axis = axis
+    stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
 }
 
 func makeLable(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
     let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
     label.text = text
+    label.textAlignment = .center
     label.font = UIFont.systemFont(ofSize: size)
     label.backgroundColor = color
     return label
