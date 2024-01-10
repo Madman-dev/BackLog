@@ -19,13 +19,19 @@ class CHCRFill: UIViewController {
         let stack = makeStackView(withOrientation: .vertical)
         stack.distribution = .fill
         
-        stack.addArrangedSubview(makeLable(withText: "Big", size: 128, color: .yellow))
-        stack.addArrangedSubview(makeLable(withText: "Mid", size: 64, color: .blue))
-        stack.addArrangedSubview(makeLable(withText: "Sml", size: 32, color: .red))
+        let bigLabel = makeLable(withText: "Big", size: 128, color: .yellow)
+        let medLabel = makeLable(withText: "Mid", size: 64, color: .blue)
+        let smallLabel = makeLable(withText: "Sml", size: 32, color: .red)
+        [bigLabel, medLabel, smallLabel].forEach { stack.addArrangedSubview($0) }
 
-        view.addSubview(stack)        
-        stack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        view.addSubview(stack)
+        stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        stack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        stack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        stack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        // giving a priority value to mediumLabel > Big Label is fitted following its intrinsic value
+        medLabel.setContentHuggingPriority(UILayoutPriority(48), for: .vertical)
     }
 }
 

@@ -106,6 +106,7 @@ func makeSpotifyButton(withText title: String) -> UIButton {
 func makeStackView(withOrientation axis: NSLayoutConstraint.Axis) -> UIStackView {
     let stack = UIStackView()
     stack.axis = axis
+    stack.spacing = 5
     stack.translatesAutoresizingMaskIntoConstraints = false
     return stack
 }
