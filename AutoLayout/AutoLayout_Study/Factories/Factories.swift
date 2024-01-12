@@ -104,21 +104,45 @@ func makeSpotifyButton(withText title: String) -> UIButton {
 }
 
 func makeStackView(withOrientation axis: NSLayoutConstraint.Axis) -> UIStackView {
-    let stack = UIStackView()
-    stack.axis = axis
-    stack.spacing = 5
-    stack.translatesAutoresizingMaskIntoConstraints = false
-    return stack
+    let stackView = UIStackView()
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+    stackView.axis = axis
+    stackView.distribution = .fill
+    stackView.alignment = .fill
+    stackView.spacing = 8.0
+
+    return stackView
 }
 
-func makeLable(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
+func makeLabel(withText text: String) -> UILabel {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = text
     label.textAlignment = .center
+    label.backgroundColor = .yellow
+    label.numberOfLines = 0
+    label.text = text
+    
+    return label
+}
+
+func makeLabel(withText text: String, size: CGFloat) -> UILabel {
+    let label = makeLabel(withText: text)
     label.font = UIFont.systemFont(ofSize: size)
+    
+    return label
+}
+
+func makeLabel(withText text: String, size: CGFloat, color: UIColor) -> UILabel {
+    let label = makeLabel(withText: text, size: size)
     label.backgroundColor = color
     return label
+}
+
+func makeSwitch(isOn: Bool) -> UISwitch {
+    let switchButton = UISwitch()
+    switchButton.translatesAutoresizingMaskIntoConstraints = false
+    switchButton.isOn = isOn
+    return switchButton
 }
 
 extension UIColor {

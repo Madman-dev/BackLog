@@ -19,9 +19,9 @@ class CHCRFill: UIViewController {
         let stack = makeStackView(withOrientation: .vertical)
         stack.distribution = .fill
         
-        let bigLabel = makeLable(withText: "Big", size: 128, color: .yellow)
-        let medLabel = makeLable(withText: "Mid", size: 64, color: .blue)
-        let smallLabel = makeLable(withText: "Sml", size: 32, color: .red)
+        let bigLabel = makeLabel(withText: "Big", size: 128, color: .yellow)
+        let medLabel = makeLabel(withText: "Mid", size: 64, color: .blue)
+        let smallLabel = makeLabel(withText: "Sml", size: 32, color: .red)
         [bigLabel, medLabel, smallLabel].forEach { stack.addArrangedSubview($0) }
 
         view.addSubview(stack)
