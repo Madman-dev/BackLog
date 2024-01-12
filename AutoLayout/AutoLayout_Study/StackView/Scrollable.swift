@@ -24,11 +24,15 @@ class Scrollable: UIViewController {
         scrollView.addSubview(stackView)
         view.addSubview(scrollView)
         
-        for _ in 1...50 {
+        for i in 1...50 {
             let row = RowView()
             stackView.addArrangedSubview(row)
             // scrollView의 width 값을 주기 위함 - 없이는 intrinsic content size를 존중
             // row.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+            
+            if i % 5 == 0 {
+                stackView.addArrangedSubview(makeSpacerView(withHeight: 100))
+            }
             
             // padding 값을 제공하게 되면서 AutoLayout 충돌 발생, padding을 제공하기 위해 widthAnchor 조절
             row.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32).isActive = true

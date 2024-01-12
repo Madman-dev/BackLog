@@ -151,8 +151,26 @@ func makeScrollView() -> UIScrollView {
     return sv
 }
 
+// 원하는 크기로 빈 공간 생성
+func makeSpacerView(withHeight value: CGFloat? = nil) -> UIView {
+    let view = UIView(frame: .zero)
+    
+    if let height = value {
+        view.heightAnchor.constraint(equalToConstant: height).setActiveBreakable()
+    }
+    
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+}
+
+extension NSLayoutConstraint {
+    // component의 중요도를 결정할 수 있도록 돕는 메서드 > 1000 being default, 750 high, 500 medium, 250 low
+    public func setActiveBreakable(priority: UILayoutPriority = UILayoutPriority(900)) {
+        self.priority = priority
+        isActive = true
+    }
+}
+
 extension UIColor {
     static let spotifyGreen = UIColor(red: 28/255, green: 184/255, blue: 89/255, alpha: 1)
 }
-
-
