@@ -22,7 +22,14 @@ class CustomView: UIViewController {
         stackView.addArrangedSubview(row)
         view.addSubview(stackView)
         
-        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        // centering the view - changes size according to intrinsic content size (from children)
+//        stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        // giving a pin to the view's layout - override the intrinsic content size and meet the requirements below
+        stackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 }

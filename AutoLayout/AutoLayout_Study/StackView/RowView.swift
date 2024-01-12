@@ -23,8 +23,10 @@ class RowView: UIView {
         let titleLabel = makeLabel(withText: "Gapless Content")
         let onOffSwitch = makeSwitch(isOn: true)
         
-        addSubview(titleLabel)
-        addSubview(onOffSwitch)
+        [titleLabel, onOffSwitch].forEach { self.addSubview($0) }
+        
+//        addSubview(titleLabel)
+//        addSubview(onOffSwitch)
         
         // No gaps between components as parent have a intrinsic content size of its own.
         titleLabel.topAnchor.constraint(equalTo: topAnchor).isActive = true
