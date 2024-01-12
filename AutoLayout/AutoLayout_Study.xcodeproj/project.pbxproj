@@ -24,6 +24,7 @@
 		BD6736D22AB85D0000770A34 /* ImageCHCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6736D12AB85D0000770A34 /* ImageCHCR.swift */; };
 		BD6AA1A62B50F0A1002E3369 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6AA1A52B50F0A1002E3369 /* RowView.swift */; };
 		BD6AA1A92B50F3EE002E3369 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6AA1A82B50F3EE002E3369 /* CustomView.swift */; };
+		BD6AA1AB2B511092002E3369 /* Scrollable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6AA1AA2B511092002E3369 /* Scrollable.swift */; };
 		BD724B872B4EE0630087E4B2 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD724B862B4EE0630087E4B2 /* StackView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		BD6736D12AB85D0000770A34 /* ImageCHCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCHCR.swift; sourceTree = "<group>"; };
 		BD6AA1A52B50F0A1002E3369 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 		BD6AA1A82B50F3EE002E3369 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		BD6AA1AA2B511092002E3369 /* Scrollable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scrollable.swift; sourceTree = "<group>"; };
 		BD724B862B4EE0630087E4B2 /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				BD724B862B4EE0630087E4B2 /* StackView.swift */,
 				BD6AA1A52B50F0A1002E3369 /* RowView.swift */,
 				BD6AA1A82B50F3EE002E3369 /* CustomView.swift */,
+				BD6AA1AA2B511092002E3369 /* Scrollable.swift */,
 			);
 			path = StackView;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				BD724B872B4EE0630087E4B2 /* StackView.swift in Sources */,
 				BD6736D02AB8350F00770A34 /* Hugging.swift in Sources */,
 				BD1316702AB596D200078AA1 /* LayoutGuide.swift in Sources */,
+				BD6AA1AB2B511092002E3369 /* Scrollable.swift in Sources */,
 				BD6736D22AB85D0000770A34 /* ImageCHCR.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

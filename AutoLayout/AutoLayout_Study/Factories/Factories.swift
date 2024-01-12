@@ -145,6 +145,12 @@ func makeSwitch(isOn: Bool) -> UISwitch {
     return switchButton
 }
 
+func makeScrollView() -> UIScrollView {
+    let sv = UIScrollView()
+    sv.translatesAutoresizingMaskIntoConstraints = false
+    return sv
+}
+
 extension UIColor {
     static let spotifyGreen = UIColor(red: 28/255, green: 184/255, blue: 89/255, alpha: 1)
 }
