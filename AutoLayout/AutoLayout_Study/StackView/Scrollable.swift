@@ -28,7 +28,10 @@ class Scrollable: UIViewController {
             let row = RowView()
             stackView.addArrangedSubview(row)
             // scrollView의 width 값을 주기 위함 - 없이는 intrinsic content size를 존중
-            row.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+            // row.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+            
+            // padding 값을 제공하게 되면서 AutoLayout 충돌 발생, padding을 제공하기 위해 widthAnchor 조절
+            row.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1, constant: -32).isActive = true
         }
         
         NSLayoutConstraint.activate([
@@ -42,5 +45,15 @@ class Scrollable: UIViewController {
             scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
         ])
+        
+        giveMargin(to: stackView)
+    }
+    
+    func giveMargin(to stack: UIStackView) {
+        // stackView가 담고 있는 child들에게 stackview의 margin 값을 사용하라고 안내
+        stack.isLayoutMarginsRelativeArrangement = true
+        
+        // padding 값
+        stack.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 40, leading: 16, bottom: 40, trailing: -16)
     }
 }
