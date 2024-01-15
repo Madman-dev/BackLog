@@ -87,3 +87,31 @@ XCTest를 통해 Launch performance를 확인할 수 있다!
 2. prioritize
 3. optimize
 
+
+
+// MARK: - Improving Launch with demo
+
+/*
+- 퍼포먼스 관련해서 작업을 하기 전에 Profile scheme을 확인할 것
+* ensure xcode to recompile app in release mode > compiler's time optimization!
+
+어플 속도 향상 관련해서 instrument를 사용하면 어플의 실행 속도 및 전체적인 프로세스를 시각적으로 보여준다
+Analyze and checks up on data for our app
+*/
+
+(App Launch Phases)
+- Before main function is invoked = purple
+- As app finishes its launch initial setup = green
+
+### Thread State
+쓰레드의 프로세스를 볼 수 있는 상황, *Thread State*
+시각적으로 보면 4가지의 상태가 있어보인다.
+- Gray: Thread is Blocked
+- Red: Thread is being/ will be used & running - but lacks CPU resources
+- Orange: Higher priority has taken over the use of thread, leaving the app in a preempted state
+- blue: working on CPU core
+
+### 여전히 어려운 Instrument
+시간을 아낄 수 있을 것이라 생각했던 Instrument가 사실 정말 복잡했다.
+하나도 이해가 안 되는 상황이었는데, 데모에서 보여주던 것과 같은 내용이 없었기 떄문에 많이 헤맸던 것 같다.
+그럼에도 불구하고 Instrument를 조금은 찾아보고 공부해야겠다는 생각이 강하게 들었는데, 
