@@ -17,7 +17,7 @@ let json = """
 let jsonData = Data(json.utf8)
 
 // convention이 달라도 가능할까?
-struct UserName: Decodable {
+struct UserName: Codable {
     let firstName: String
     let lastName: String
 }

@@ -7,5 +7,6 @@
         <page name='Samurai Challenge'/>
         <page name='Encoding and Decoding'/>
         <page name='Converting Case'/>
+        <page name='Mapping Different key names'/>
     </pages>
 </playground>
