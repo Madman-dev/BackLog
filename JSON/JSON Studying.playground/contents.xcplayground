@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='macos' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='초기 궁금증'/>
+        <page name='Json Study'/>
+        <page name='Agile Samurai'/>
+        <page name='Samurai Challenge'/>
+        <page name='Encoding and Decoding'/>
+        <page name='Converting Case'/>
+    </pages>
+</playground>
