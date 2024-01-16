@@ -33,6 +33,8 @@ Temporary Items
 ### macOS Patch ###
 # iCloud generated files
 *.icloud
+# Created by https://www.toptal.com/developers/gitignore/api/xcode,swift
+# Edit at https://www.toptal.com/developers/gitignore?templates=xcode,swift
 
 ### Swift ###
 # Xcode
