@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <playground version="6.0" requires-full-environment="false" target-platform="ios">
     <pages>
-        <page name="MyPlayground"/>
+        <page name="기본 개념"/>
+        <page name="instanceTracking"/>
     </pages>
 </playground>
