@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <playground target-platform="ios" version="6.0" requires-full-environment="false">
     <pages>
+<<<<<<< HEAD
         <page name="기본 개념"/>
         <page name="객체  추가"/>
         <page name="추가 정리"/>
+=======
+        <page name="기본 개념"/>
+        <page name="instanceTracking"/>
+>>>>>>> dd14d325be61f708ee993f82e4e5d533eaede500
     </pages>
 </playground>
