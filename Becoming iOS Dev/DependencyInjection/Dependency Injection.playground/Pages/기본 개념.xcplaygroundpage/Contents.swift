@@ -63,20 +63,26 @@ protocol InjectedGateway {
     func pay(amount: Double)
 }
 
-class InjectCreditCardPayment: InjectedGateway {
+class InjectedCreditCardPayment: InjectedGateway {
+    let amount: Double
+    
+    init(amount: Double) {
+        self.amount = amount
+    }
+    
     func pay(amount: Double) {
         print("이제 카드로 \(amount) 비용을 지출합니다.")
     }
 }
 
-class InjectPaypalPayment: InjectedGateway {
+class InjectedPaypalPayment: InjectedGateway {
     func pay(amount: Double) {
         print("지금은 페이팔로 \(amount) 비용을 지출합니다.")
     }
 }
 
 // InjectedPaymentProcessor now depends on interface and protocol - high level abstraction
-class InjectPaymentProcessor {
+class InjectedPaymentProcessor {
     let payment: InjectedGateway
     
     init(paymentGateway: InjectedGateway) {
@@ -87,6 +93,16 @@ class InjectPaymentProcessor {
         payment.pay(amount: amount)
     }
 }
+
+// 카드로 계산
+let creditCard = InjectedCreditCardPayment(amount: 30)
+//print(creditCard.amount)
+let creditInjection = InjectedPaymentProcessor(paymentGateway: creditCard)
+
+// 페이팔로 변경
+let paypal = InjectedPaypalPayment()
+let paypalInjection = InjectedPaymentProcessor(paymentGateway: paypal)
+paypalInjection.pay(amount: 15)
 
 /*
  항상 같은 흐름을 타고 있지만, 이해는 되는 것 같다.
