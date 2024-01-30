@@ -86,5 +86,25 @@ extension SundaeTopping: OptionSet {}
 
 macros가 큰 도움을 주고 있다 느껴지는가?
 
+// 240130
+YES!
+SwiftUI를 공부를 하면서 발견한 점이 Preview이다.
+
+기존 코드와 macro로 바뀐 코드의 구조를 작성해보겠다.
+```swift
+// 기존 프리뷰를 활용하기 위한 코드
+struct viewPreview: PreviewProvider {
+  static var previews: some View {
+    ContentView()
+  }
+}
+
+// macros로 단축된 코드
+#Preview {
+  ContentView()
+}
+```
+
 참고
 - https://engineering.traderepublic.com/get-ready-for-swift-macros-fe21d3867e02
+- https://www.avanderlee.com/xcode/preview-swiftui-uikit-appkit-views/
