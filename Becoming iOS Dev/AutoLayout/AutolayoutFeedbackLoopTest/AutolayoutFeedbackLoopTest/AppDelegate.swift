@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  AutoLayout_Study
+//  AutolayoutFeedbackLoopTest
 //
-//  Created by Jack Lee on 2023/09/16.
+//  Created by Porori on 2/8/24.
 //
 
 import UIKit

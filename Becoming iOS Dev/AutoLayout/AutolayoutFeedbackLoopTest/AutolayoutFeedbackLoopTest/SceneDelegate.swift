@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  AutoLayout_Study
+//  AutolayoutFeedbackLoopTest
 //
-//  Created by Jack Lee on 2023/09/16.
+//  Created by Porori on 2/8/24.
 //
 
 import UIKit
@@ -11,13 +11,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = Scrollable()
-            self.window = window
-            window.makeKeyAndVisible()
-        }
+        guard let windowScene = scene as? UIWindowScene else { return }
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window?.windowScene = windowScene
+        window?.rootViewController = ViewController()
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
