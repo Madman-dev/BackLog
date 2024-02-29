@@ -133,3 +133,9 @@ WWDC에서도 생명주기 메서드 내에서 선언하여 활용하는 방법�
 - https://developer.apple.com/videos/play/wwdc2020/10052/
 - https://www.biteinteractive.com/control-target-and-action-in-ios-14/
 - https://www.iosdevie.blog/p/goodbye-target-actions-hello-uiactions
+- https://www.swiftbysundell.com/tips/creating-closure-based-ui-controls-with-uiaction/
+- https://www.samurai-digital.com/how-ios14s-uiaction-reduces-repetitive-code/
+
+WWDC
+- https://developer.apple.com/videos/play/wwdc2020/10052/?time=666
+- 2019, Modernize your UI for iOS 13
