@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//MARK: - 노드
+class Node&lt;T&gt; {
+    var value: T
+    var next: Node&lt;T&gt;?
+    
+    init(value: T, next: Node&lt;T&gt;? = nil) {
+        self.value = value
+        self.next = next
+    }
+}
+
+
+//MARK: - 링크드 리스트
+struct LinkedList&lt;T&gt; {
+    
+    var head: Node&lt;T&gt;?
+    var tail: Node&lt;T&gt;?
+    var isEmpty: Bool {
+        head == nil
+    }
+    
+    init() {}
+    
+    // push to front
+    mutating func push(_ value: T) {
+        head = Node(value: value, next: head)
+        
+        if tail == nil {
+            tail = head
+        }
+    }
+
+    // push to back    
+    mutating func append(_ value: T) {
+        let node = Node(value: value)
+        
+        // 새로 생성한 노드가 끝으로 이동
+        tail?.next = node
+        
+        // 기존 LinkedList의 tail을 새로 변경된 tail로 확정! (as tail was nil)
+        tail = node
+    }
+    
+    func node(at index: Int) -&gt; Node&lt;T&gt;? {
+        var currentIndex = 0
+        var currentNode = head
+        
+        while currentNode != nil &amp;&amp; currentIndex &lt; index {
+            // 원래 head에 있던 node를 next 값으로 교체
+            currentNode = currentNode?.next
+            currentIndex += 1
+        }
+        return currentNode
+    } 
+}
+
+/*
+ LinkedList에는 3가지 타입이 있다.
+ 1. Singly, 2. Doubly, 3. Circular
+ 
+ 따라서 singly LinkedList의 경우 한번 Node에서 이동하면 되돌아갈 방법이 없다.
+ 그렇기에 Leetcode에서도 next만 가능했던 것.
+
+중간에 데이터가 잘못될 경우 전체 List의 연결이 끊긴다.
+ 
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1327}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
