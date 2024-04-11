@@ -24,6 +24,11 @@ Monolithic에서 Modular로 변하게 된다.
 기능을 추가해도 Legacy 코드가 늘어나, 안전성이 떨어지고 -
 해당 이슈를 해결하고자 새로 리쿠르트를 하더라도 conflict가 증가하여 결국 유지보수 비용이 증가하게 되는 상황이 발생한다고 한다.
 
+### Modular Architecture
+
+모듈 아키텍쳐는 프로그램 기능 분리에 집중된 기술이다.
+
+
 
 출처
 - https://www.youtube.com/watch?v=BjK42O8Lt48

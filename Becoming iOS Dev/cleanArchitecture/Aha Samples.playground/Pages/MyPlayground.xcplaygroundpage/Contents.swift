@@ -6,21 +6,32 @@ import UIKit
 
 
 //MARK: - AVOID HASTY ABSTRACTION
+//struct Person {
+//    struct Name { 
+//        var honorific: String
+//        var first: String
+//        var last: String
+//    }
+//    
+//    var name: Name
+//    var username: String
+//}
+
+struct Name {
+    var honorific: String
+    var first: String
+    var last: String
+}
+
 struct Person {
-    struct Name { 
-        var honorific: String
-        var first: String
-        var last: String
-    }
-    
-    var name: Name
-    var username: String
+    let name: Name
+    let username: String
 }
 
 // 1차 Abstraction
-//func getDisplayName(name: Person) -> String {
-//    return "\(name.name.first) \(name.name.last)"
-//}
+func getDisplayName(name: Person) -> String {
+    return "\(name.name.first) \(name.name.last)"
+}
 
 // 2차 Abstraction
 func getDisplayname(user: Person, includeHonorific: Bool = false, includeUsername: Bool = false, firstInitial: Bool = false, onlyUsername: Bool = false) -> String {
@@ -48,18 +59,19 @@ func getDisplayname(user: Person, includeHonorific: Bool = false, includeUsernam
     return displayName
 }
 
-
-let phil = Person(name: Person.Name(honorific: "의사", first: "필립", last: "로드리게스"), username: "필립필립")
+let jack = Person(name: Name(honorific: "의사", first: "잭", last: "리"), username: "잭잭")
+//let phil = Person(name: Person.Name(honorific: "의사", first: "필립", last: "로드리게스"), username: "필립필립")
 //let displayname = getDisplayname(user: phil)
 //let cardDisplayName = getDisplayname(user: phil, onlyUsername: true)
 //let profileDisplayName = getDisplayname(user: phil, includeHonorific: true)
 //let navDisplayName = getDisplayname(user: phil, firstInitial: true)
 
 
-let displayname = "\(phil.name.first) \(phil.name.last)"
-let cardDisplayName = "\(phil.username)"
-let profileDisplayName = "\(phil.name.honorific) \(phil.name.first)"
-let navDisplayName = String(phil.name.first).prefix(1) + ". " + "\(phil.name.last)"
+let displayname = "\(jack.name.first) \(jack.name.last)"
+let display = getDisplayName(name: jack)
+let cardDisplayName = "\(jack.username)"
+let profileDisplayName = "\(jack.name.honorific) \(jack.name.first)"
+let navDisplayName = String(jack.name.first).prefix(1) + ". " + "\(jack.name.last)"
 
 
 
