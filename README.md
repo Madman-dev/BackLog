@@ -15,6 +15,12 @@ Influenced by 'conventional commits', the repo will commit as follows
 ___
 ### Components
 - [UIAction, what's different?](./Locker/UIAction.md)
+- [Expandable cell - 04.26](./Locker/expanding%20collectionview.md)
+- [init시 cornerRadius 적용 - 04.23](./Locker/setLayoutSubview.md)
+- [UIBezierPath를 활용한 타이머 구현 - 04.23](./Locker/UIBezierPath.md)
 
 ### UIColor
 - [how to use HexCode](./Locker/HexCode.md)
+
+### CS
+- [Fibonacci #](./Locker/Fibonacci%20Number.md)
