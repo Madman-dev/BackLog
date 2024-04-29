@@ -102,3 +102,88 @@ if selectedIndexPath?.row == indexPath.row {
         }
     }
 ```
+
+> Selectively resizing components
+
+### 별도 constraint 설정
+```swift
+private func stack() {
+        addSubviews(stackView)
+        
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: topAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    private func imageView() {
+        stackView.addArrangedSubview(pokeImage)
+        
+        
+        pokeImageLeading = pokeImage.leadingAnchor.constraint(equalTo: stackView.leadingAnchor)
+        pokeImageTrailing = pokeImage.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
+        pokeImageTop = pokeImage.topAnchor.constraint(equalTo: stackView.topAnchor)
+        
+        pokeImageLeading.isActive = true
+        pokeImageTrailing.isActive = true
+        pokeImageTop.isActive = true
+    }
+    
+    private func label() {
+        stackView.addArrangedSubview(nameLabel)
+        
+        NSLayoutConstraint.activate([
+            nameLabel.topAnchor.constraint(equalTo: pokeImage.bottomAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor)
+        ])
+    }
+    
+    func configureOpenedStack(show: Bool) {
+        if show {
+            stackView.addArrangedSubview(dataLabel)
+            stackView.addArrangedSubview(dataLabel2)
+            
+            pokeImageLeading = nil
+            pokeImageTrailing = nil
+            pokeImageTop = nil
+            pokeImageWidth = pokeImage.widthAnchor.constraint(equalToConstant: 40)
+            pokeImageHeight = pokeImage.heightAnchor.constraint(equalToConstant: 40)
+            pokeImageWidth.isActive = true
+            pokeImageWidth.isActive = true
+
+            
+            NSLayoutConstraint.activate([
+                dataLabel.topAnchor.constraint(equalTo: pokeImage.bottomAnchor),
+                dataLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                dataLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+                
+                dataLabel2.topAnchor.constraint(equalTo: dataLabel.bottomAnchor),
+                dataLabel2.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                dataLabel2.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            ])
+            
+            dataLabel.isHidden = false
+            dataLabel2.isHidden = false
+        } else {
+            dataLabel.isHidden = true
+            dataLabel2.isHidden = true
+        }
+    }
+```
+
+### CHCR
+
+```swift
+            pokeImage.contentCompressionResistancePriority(for: .horizontal)
+            pokeImage.contentCompressionResistancePriority(for: .vertical)
+```
+
+### containerView
+
+### stackView autolayout 축소
