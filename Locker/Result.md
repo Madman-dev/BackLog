@@ -1,7 +1,9 @@
 # Result
 
-**더 깔끔한 에러 핸들링을 위해 Result가 Swift 5이후부터 적용되었다.**<br/>
-단순 타입으로 값을 반환하던 방법과 달리 success, failure로 값이 반환된다.<br/>
+**Swift 5이후부터 적용된 더 깔끔한 에러 핸들링 방법.**<br/>
+- nil이 포함됐을 때 이론적으로 가능한 값은 4가지. (nil, error), (nil, nil), (result, error), (result, nil)<br/>
+Result 덕분에 success, failure 2가지로만 값을 반환할 수 있게되며 오류 가능성 또한 줄어든다.<br/>
+
 [원본 proposal 글](https://github.com/apple/swift-evolution/blob/main/proposals/0235-add-result.md)
 
 ## use case
@@ -68,30 +70,30 @@ func fetchPokemon(completion: @escaping (Result<Pokemon, NetworkError>) -> Void)
 - **Result Error Handling을 Swift에서 제공하는 Error로 사용하기를 권장한다.**<br/>
 평소에는 NetworkError 같은 커스텀 Error을 생성하고 각 케이스에 맞게 값을 반환하도록 했는데, Error을 채택하면 더 다양한 코드를 활용할 수 있다고 한다.<br/>아래와 같은 상황이 될 수 있지 않을까..? 싶다.
 
-```swift
-func fetchData(completion: @escaping (Result<Data, Error>) -> Void) {
-    // NetworkError가 아닌 Error로 선언할 경우
-}
-
-fetchData { result in
-    switch result {
-        case .success(let data):
-            print("데이터가 있습니다. \(data)")
-        // 활용하는 call site에서 error를 다양하게 바꿀 수 있게 된다.
-        case .failure(let error):
-            if let networkError = error as? NetworkError {
-                switch networkError {
-                    case .invalidParsing
-                    case .wrongNetworkCall
-                }
-            } else {
-                let error = error as? DefaultError {
-                    print(error.localDescription)
-                }
-            }
+    ```swift
+    func fetchData(completion: @escaping (Result<Data, Error>) -> Void) {
+        // NetworkError가 아닌 Error로 선언할 경우
     }
-}
-```
+
+    fetchData { result in
+        switch result {
+            case .success(let data):
+                print("데이터가 있습니다. \(data)")
+            // 활용하는 call site에서 error를 다양하게 바꿀 수 있게 된다.
+            case .failure(let error):
+                if let networkError = error as? NetworkError {
+                    switch networkError {
+                        case .invalidParsing
+                        case .wrongNetworkCall
+                    }
+                } else {
+                    let error = error as? DefaultError {
+                        print(error.localDescription)
+                    }
+                }
+        }
+    }
+    ```
 
 <br/><br/>
 # What I don't understand
@@ -132,5 +134,6 @@ switch result {} 로 성공과 실패했을 때 각각의 값을 지정하지 �
 error = error, response = response 처럼 각 에러에 대한 값을 가드문으로 확인하면서 바로 처리해야하지만, Result를 사용하면 우리가 준비된 시점에 처리를 할 수 있도록 미룰 수 있다.
 
 <br/>
+
 ## 참고 링크
 - [HackingWithSwift](https://www.hackingwithswift.com/articles/161/how-to-use-result-in-swift)
