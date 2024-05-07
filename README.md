@@ -19,6 +19,10 @@ ___
 - [init시 cornerRadius 적용 - 04.23](./Locker/setLayoutSubview.md)
 - [UIBezierPath를 활용한 타이머 구현 - 04.23](./Locker/UIBezierPath.md)
 
+### Refactoring
+- [Result로 업데이트 - 04.23](./Locker/Result.md)
+- [asyncUpdate 업데이트 - 05.07](./Locker/Async%20Await.md)
+
 ### UIColor
 - [how to use HexCode](./Locker/HexCode.md)
 
