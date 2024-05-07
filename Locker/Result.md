@@ -137,3 +137,5 @@ error = error, response = response 처럼 각 에러에 대한 값을 가드문�
 
 ## 참고 링크
 - [HackingWithSwift](https://www.hackingwithswift.com/articles/161/how-to-use-result-in-swift)
+- [sundell](https://www.swiftbysundell.com/articles/the-power-of-result-types-in-swift/)
+- [Writing failable Asynchronous API calls](https://developer.apple.com/documentation/swift/writing-failable-asynchronous-apis)
