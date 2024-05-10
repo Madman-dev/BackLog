@@ -23,7 +23,7 @@ ___
 ### Refactoring
 - [Result로 업데이트 - 04.23](./Locker/Result.md)
 - [asyncUpdate 업데이트 - 05.07](./Locker/Async%20Await.md)
-- [Async & sync](./Locker/Async%20Await.md)
+- [Async & sync](./Locker/sync%20vs%20async.md)
 - [@escaping](./Locker/@Escaping%20errorHandling.md)
 
 ### UIColor
