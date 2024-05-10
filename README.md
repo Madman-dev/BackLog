@@ -1,5 +1,6 @@
 # My journey log 🚶🏻 
 
+### 코딩을 하면서 마주한 모든 것에 대해 작성을 합니다.<br> 학습한 내용을 정리하기 위해, 잊었을 때 되돌아보기 위함도 있지만<br><u>무엇보다 어떤 목표를 가지고 개발을 할 때 제 생각의 흐름을 기록하기 위해 정리합니다.</u><br><br>
 
 Influenced by 'conventional commits', the repo will commit as follows
 
