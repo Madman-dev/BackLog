@@ -19,15 +19,21 @@ ___
 - [Expandable cell - 04.26](./Locker/expanding%20collectionview.md)
 - [init시 cornerRadius 적용 - 04.23](./Locker/setLayoutSubview.md)
 - [UIBezierPath를 활용한 타이머 구현 - 04.23](./Locker/UIBezierPath.md)
+- [타이머 구현 이슈 - 05.13](./Locker/Using%20Timers.md)
+- [AVFoundation으로 카메라 구현 - 04.23](./Locker/Camera.md)
 
 ### Refactoring
 - [Result로 업데이트 - 04.23](./Locker/Result.md)
 - [asyncUpdate 업데이트 - 05.07](./Locker/Async%20Await.md)
 - [Async & sync](./Locker/sync%20vs%20async.md)
 - [@escaping](./Locker/@Escaping%20errorHandling.md)
+- [Learning Concurrency](./Locker/Concurrency.md)
 
 ### UIColor
 - [how to use HexCode](./Locker/HexCode.md)
+
+### Layout
+- [Frame과 Bound의 차이점](./Locker/Frame%20vs%20Bounds.md)
 
 ### CS
 - [Algorithm Issues](./Locker/Algorithm%20Issues.md)
