@@ -109,5 +109,29 @@ func fetchPhoto(url: URL) async throws -> UIImage {
 - call site 큐, 스레드에서만 진행되기에 threading 문제 또한 걱정하지 않아도 된다.
 
 ## Problems when using
+- completionHandler의 가장 큰 문제점은 호출을 따로 하지 않아도 compiling 단계에서는 실행이 된다는 점!!!
+```swift
+import Foundation
+
+func fetchData(url: URL, _ completion: @escaping (Result<Data, Error>) -> Void {
+    URLSession.shared.dataTask(with: url) { data, _, error in
+        guard error == nil else {
+            // completion(.failure(error!)) > 해당 completion을 호출하지 않아도 문제가 없는걸로 인식한다.
+            return
+        }
+
+        guard let data else {
+            completion(.failure(NetworkError.noData))
+            return
+        }
+
+        completion(.sucess(data))
+    }
+    .resuume()
+}
+```
+- 간단한 어플같은 경우 문제는 없겠지만, production quality를 가진 어플의 경우 어디에서 어떤 이유로 문제가 발생하는지 파악하기 힘들어진다. completion 코드를 넣지 않았기에 crash가 발생하더라도 오류가 던져지지 않아 모든 코드를 확인해야하는 불상사도 발생할 가능성이 있다...
+
+- 해당 문제점을 해결하기 위해 safely using completionHandler를 활용할 수 있지만, 특정 데이터 타입을 선언했을 경우 불가능하다. 전달하는 데이터 타입이 Data일 경우에만 defer를 활용해서 적용할 수 있다. [[관련 링크]](https://www.swiftwithvincent.com/blog/how-to-make-a-completionhandler-much-safer)
 - 해야했던 만큼, nil 값도 할당했다.
 - 이 상황에서 실제로 값이 돌아오는지, 0인지 error인지, 값은 있는지, nil인지 등을 고려하다보니 
